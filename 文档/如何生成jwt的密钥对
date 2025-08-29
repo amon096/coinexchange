@@ -1,0 +1,25 @@
+生成私钥和公钥
+生成私钥：
+keytool -genkeypair -alias coinexchange -keyalg RSA -keypass coinexchange -keystore coinexchange.jks -validity 365 -storepass coinexchange
+具体命令和参数：
+Keytool 是一个java提供的证书管理工具
+
+现在，桌面上已经有一个jks 文件了。
+
+该文件里面保存的就是私钥信息。
+
+解析公钥：
+keytool -list -rfc --keystore coinexchange.jks | openssl x509 -inform pem -pubkey
+
+将解析出来的公钥放在一个文件的文件里面:
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArbzkbzTuolRUWzdGUfj/
+cc5BHuQeTXUJuvfHtEFQf5yl2ZZ9Q6banG5Bb9ph9/v5C1BjeoJYtzJoiMfHUOFs
+BLIYwseII4pt38OQJ4SVu1okOEPv+mgbNxHdyfX0etROCKKFBQrvV+N21IO/meRJ
+YlXylmWt4/wh78G3jgXFsnCr/VAUqRGxDPA+r3zAXNAFXAiJFEOzvBq+8+QLQ/hv
+lzN2asfr0M4b/N1mgO6N3atpat3updLD0zzOZ0P8vDhJzNCgPTQe5urxoSg8BH1M
+BIH8Qx3Mfwq5Lf+SZjCWKzRZpw047MH3ReEER4E0s1F0mmS5MEMWsjrlzzTzY+T7
+ewIDAQAB
+-----END PUBLIC KEY-----
+
+保存好，以后备用。

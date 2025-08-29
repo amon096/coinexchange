@@ -1,0 +1,17 @@
+//[
+//  {
+//    "resource": "资源的名称：当为网关时routes.id, 当为api分组：api分组的名称",
+//    "resourceMode" : "0代表网管关分组,1代表api分组",
+//    "intervalSec": 60,
+//    "count":5
+//  }
+//]
+
+[
+  {
+    "resource": "admin-service_router",
+    "resourceMode" : "0",
+    "intervalSec": 60,
+    "count":5
+  }
+]
